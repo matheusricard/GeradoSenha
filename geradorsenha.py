@@ -54,7 +54,7 @@ def main():
     simbolos = input('Deseja Incluir síbolos? (s/n) ').lower() == 's'
     quantidade = int(input('Quantas senhas você deseja gerar? '))
 
-    with open('senha.txt', 'w') as f:
+    with open('senha.txt', 'a') as f:
         for i in range(quantidade):
             senha = gerar_senha(tamanho, letras, numeros, simbolos)
             while not (re.search(r'.{8,}', senha) and re.search(r'[A-Z]', senha) and re.search(r'\d', senha) and re.search(r'[!@#$%¨&*]', senha)):
